@@ -1,0 +1,18 @@
+rpc-http-enabled=true
+rpc-http-host="0.0.0.0"
+rpc-http-port=8545
+rpc-http-cors-origins=["all"]
+rpc-http-api=["ETH", "NET", "IBFT", "EEA", "PRIV"]
+
+host-whitelist=["*"]
+
+privacy-enabled=true
+privacy-url="http://orion:8888"
+privacy-public-key-file="/orion/testKey.pub"
+
+# Chain
+genesis-file="/genesis.json" # Path to the custom genesis file
+
+# Mining
+miner-enabled=true
+miner-coinbase="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"

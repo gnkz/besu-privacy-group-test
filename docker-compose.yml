@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  chain:
+    image: hyperledger/besu:latest
+    ports:
+      - "28545:8545"
+    command: --config-file=/besu.toml
+    volumes:
+      - ./besu.toml:/besu.toml
+      - ./genesis.json:/genesis.json
+      - ./data/orion:/orion
+      - ./data/besu:/var/lib/besu
+    depends_on:
+      - orion
+
+  orion:
+    image: pegasyseng/orion:latest
+    command: /orion.conf
+    volumes:
+      - ./data/orion:/data
+      - ./orion.conf:/orion.conf
